@@ -36,6 +36,9 @@ function onSubmit(event) {
   const {
     elements: { email, message },
   } = event.currentTarget;
+  if (email.value === '' || message.value === '') {
+    return;
+  }
   console.log({ email: email.value, message: message.value });
   localStorage.removeItem('feedback-form-state');
   refs.onInputData.reset();
